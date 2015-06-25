@@ -25,21 +25,16 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-        if (move === null){
-            move = getInput();
-        }
-
-        return move;
+     
+       return getInput();
 }
 
 function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    if (move === null){
-        move = randomPlay();
-    }
-    return move;
+    
+      return randomPlay();
 }
 
 function getWinner(playerMove,computerMove) {
@@ -98,8 +93,8 @@ function playToFive() {
     var computerWins = 0;
     
     while (playerWins < 5 && computerWins < 5) {
-        var playerMove = getInput();
-        var computerMove = randomPlay();
+        var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
         var winner = getWinner(playerMove,computerMove);
         console.log("The player chose: " + playerMove);
         console.log("The computer chose: " + computerMove);
